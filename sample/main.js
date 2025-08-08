@@ -1,4 +1,4 @@
-// 東京(130000)の予報を取得
+// 静岡(220000)の予報を取得
 let url = "https://www.jma.go.jp/bosai/forecast/data/overview_forecast/220000.json";
  
 fetch(url)
