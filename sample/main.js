@@ -7,7 +7,8 @@ fetch(url)
    })
    .then(function(weather) {
        console.log(weather);
-       const formatDatetime = `${weather.reportDatetime.getFullYear()}/${String(weather.reportDatetime.getMonth() + 1).padStart(2, '0')}/${String(weather.reportDatetime.getDate()).padStart(2, '0')} ${String(weather.reportDatetime.getHours()).padStart(2, '0')}:${String(weather.reportDatetime.getMinutes()).padStart(2, '0')}:${String(weather.reportDatetime.getSeconds()).padStart(2, '0')}`;
+       const date = weather.reportDatetime;
+       const formatDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours() + 9).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
        // 画面に書き出す
        document.getElementById("publishingOffice").lastElementChild.textContent = weather.publishingOffice;
        document.getElementById("reportDatetime").lastElementChild.textContent = formatDatetime;
